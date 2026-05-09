@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ══════════════════════════════════════════
+   DARK / LIGHT THEME VARIABLES
+   ══════════════════════════════════════════ */
+
+:root {
+  /* Dark (default) */
+  --bg:              #0f172a;
+  --bg-secondary:    #1e293b;
+  --surface:         #1e293b;
+  --border:          #334155;
+  --text-primary:    #f1f5f9;
+  --text-secondary:  #94a3b8;
+  --accent:          #6366f1;
+  --accent-secondary:#a78bfa;
+  --accent-hover:    #818cf8;
+  --nav-bg:          rgba(15, 23, 42, 0.85);
+  --nav-border:      rgba(51, 65, 85, 0.6);
+  --shadow-color:    rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] {
+  --bg:              #f8fafc;
+  --bg-secondary:    #f1f5f9;
+  --surface:         #ffffff;
+  --border:          #e2e8f0;
+  --text-primary:    #0f172a;
+  --text-secondary:  #64748b;
+  --accent:          #6366f1;
+  --accent-secondary:#7c3aed;
+  --accent-hover:    #4f46e5;
+  --nav-bg:          rgba(248, 250, 252, 0.85);
+  --nav-border:      rgba(226, 232, 240, 0.8);
+  --shadow-color:    rgba(0, 0, 0, 0.08);
+}
+
+/* ══════════════════════════════════════════
+   RESET & GLOBAL STYLES
+   ══════════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ══════════════════════════════════════════
+   SHARED GAME PAGE STYLES
+   ══════════════════════════════════════════ */
+
+.game-page {
+  padding-bottom: 4rem;
+}
+
+.game-hero {
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.game-hero-overlay {
+  position: relative;
+  z-index: 1;
+  padding: 3rem 2rem;
+}
+
+.game-hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.game-tagline {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.5rem;
+}
+
+.game-meta {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.meta-badge {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.game-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.game-description {
+  margin-bottom: 3rem;
+}
+
+.game-description h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.game-description p {
+  color: var(--text-secondary);
+  line-height: 1.9;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+}
+
+.features-list li {
+  padding: 0.6rem 0 0.6rem 1.5rem;
+  position: relative;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+.features-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+/* ── Screenshots ── */
+.screenshots-section {
+  margin-bottom: 3rem;
+}
+
+.screenshots-section h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+}
+
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.screenshot-placeholder {
+  background: var(--surface);
+  border: 2px dashed var(--border);
+  border-radius: 12px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+.screenshot-placeholder:hover {
+  border-color: var(--accent);
+}
+
+.screenshot-placeholder.wide {
+  grid-column: span 1;
+  height: 200px;
+}
+
+/* ── Download Section ── */
+.download-section {
+  text-align: center;
+  padding: 3rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  margin-top: 1rem;
+}
+
+.download-section h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.download-section p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 2rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+.windows-btn {
+  background: linear-gradient(135deg, #0078d7, #00a4ef) !important;
+}
+
+@media (max-width: 600px) {
+  .game-hero h1 {
+    font-size: 2.2rem;
+  }
+  .game-content {
+    padding: 2rem 1rem;
+  }
+  .screenshots-grid {
+    grid-template-columns: 1fr;
+  }
+}
