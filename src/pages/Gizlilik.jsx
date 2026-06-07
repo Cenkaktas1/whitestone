@@ -5,7 +5,7 @@ export default function GizlilikPolitikasi() {
     <div className="gizlilik-page">
       <div className="gizlilik-container">
         <h1>Privacy Policy</h1>
-        <p className="gizlilik-date">Effective as of 2026-05-05</p>
+        <p className="gizlilik-date">Effective as of 2026-06-07</p>
 
         <section className="gizlilik-section">
           <p>
@@ -35,6 +35,13 @@ export default function GizlilikPolitikasi() {
           </p>
           <p>
             For a better experience, while using the Application, the Service Provider may require you to provide us with certain personally identifiable information, including but not limited to None. The information that the Service Provider request will be retained by them and used as described in this privacy policy.
+          </p>
+        </section>
+
+        <section className="gizlilik-section">
+          <h2>Ads and Third-Party Services</h2>
+          <p>
+            The Application utilizes third-party advertising services, specifically Google AdMob, to support development and keep the app free. These services may collect and process your Advertising ID, app performance data (such as crash logs), and approximate location to provide personalized ads, measure ad performance, and prevent fraud. For more information on how Google uses your data, please visit Google's Privacy &amp; Terms.
           </p>
         </section>
 
